@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block script %}{% endblock %}
+</head>
+<body>
+<div id="content">
+    {% block header %}<h1>Django Login Demo</h1>{% endblock %}
+    <hr>
+    {% block content %}{% endblock %}
+    <hr>
+    <footer>
+        <small>Author: <a href="https://github.com/ZZy979">ZZy</a></small>
+    </footer>
+</div>
+</body>
+</html>

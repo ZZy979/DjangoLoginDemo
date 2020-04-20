@@ -1,0 +1,24 @@
+{% extends 'login/base.html' %}
+
+{% block title %}首页{% endblock %}
+
+{% block script %}
+{% if message %}
+    <script>alert('{{ message }}')</script>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+{% if request.session.username %}
+    <nav>
+        <a href="{% url 'login:logout' %}">注销</a>
+    </nav>
+    <p>欢迎，{{ request.session.username }}！</p>
+{% else %}
+    <nav>
+        <a href="{% url 'login:login' %}">登录</a> |
+        <a href="{% url 'login:register' %}">注册</a>
+    </nav>
+    <p>欢迎！</p>
+{% endif %}
+{% endblock %}
